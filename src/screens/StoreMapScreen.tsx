@@ -16,8 +16,8 @@ const StoreMapScreen = ({ route }) => {
     const navigation = useNavigation();
     const { fleetbase } = useFleetbase();
     const { store, currentStoreLocation, storeLocations } = useStoreLocations();
-    const initialLocation = restoreFleetbasePlace(currentStoreLocation.getAttribute('place'));
-    const initialCoordinates = getCoordinatesObject(initialLocation);
+    const initialLocation = currentStoreLocation ? restoreFleetbasePlace(currentStoreLocation.getAttribute('place')) : null;
+    const initialCoordinates = initialLocation ? getCoordinatesObject(initialLocation) : { latitude: 0, longitude: 0 };
     const [mapRegion, setMapRegion] = useState({
         ...initialCoordinates,
         latitudeDelta: 0.05,
