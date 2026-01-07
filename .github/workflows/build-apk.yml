@@ -45,13 +45,13 @@ jobs:
         run: |
           echo "APP_NAME=Shirin Biscuit" > .env
           echo "APP_IDENTIFIER=com.shirinbiscuit.storefront" >> .env
-          echo "FLEETBASE_HOST=${{ secrets.FLEETBASE_HOST || 'http://127.0.0.1:8000' }}" >> .env
-          echo "FLEETBASE_KEY=${{ secrets.FLEETBASE_KEY || '' }}" >> .env
-          echo "STOREFRONT_KEY=${{ secrets.STOREFRONT_KEY || '' }}" >> .env
-          echo "GOOGLE_MAPS_KEY=${{ secrets.GOOGLE_MAPS_KEY || '' }}" >> .env
-          echo "STRIPE_KEY=${{ secrets.STRIPE_KEY || '' }}" >> .env
-          echo "FACEBOOK_APP_ID=${{ secrets.FACEBOOK_APP_ID || 'placeholder' }}" >> .env
-          echo "FACEBOOK_CLIENT_TOKEN=${{ secrets.FACEBOOK_CLIENT_TOKEN || 'placeholder' }}" >> .env
+          echo "FLEETBASE_HOST=${{ secrets.FLEETBASE_HOST }}" >> .env
+          echo "STOREFRONT_KEY=${{ secrets.STOREFRONT_KEY }}" >> .env
+          echo "FLEETBASE_KEY=${{ secrets.FLEETBASE_KEY }}" >> .env
+          echo "GOOGLE_MAPS_API_KEY=${{ secrets.GOOGLE_MAPS_API_KEY }}" >> .env
+          echo "STRIPE_KEY=${{ secrets.STRIPE_KEY }}" >> .env
+          echo "FACEBOOK_APP_ID=${{ secrets.FACEBOOK_APP_ID || '0' }}" >> .env
+          echo "FACEBOOK_CLIENT_TOKEN=${{ secrets.FACEBOOK_CLIENT_TOKEN || '0' }}" >> .env
           echo "GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID || '' }}" >> .env
           echo "GOOGLE_IOS_CLIENT_ID=${{ secrets.GOOGLE_IOS_CLIENT_ID || '' }}" >> .env
 

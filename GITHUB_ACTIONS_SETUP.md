@@ -12,9 +12,11 @@ This repository includes a GitHub Actions workflow that builds Android APK files
 
 Go to your repository on GitHub: **Settings → Secrets and variables → Actions → New repository secret**
 
-### Required Secret
+### Required Secrets
 
-#### `GOOGLE_SERVICES_JSON`
+You must add these secrets for the app to work properly:
+
+#### 1. `GOOGLE_SERVICES_JSON`
 Your Firebase/Google Services configuration file content.
 
 **How to add:**
@@ -23,19 +25,44 @@ Your Firebase/Google Services configuration file content.
 3. Create a new secret named `GOOGLE_SERVICES_JSON`
 4. Paste the content as the value
 
+#### 2. `FLEETBASE_HOST`
+Your Fleetbase API host URL.
+- Example: `https://api.fleetbase.io`
+
+#### 3. `STOREFRONT_KEY`
+Your Storefront API key from Fleetbase Console.
+- Found in: Storefront → Settings → API
+- Example: `store_2397bce9b917b31479f62f8e4cc4b960`
+
+#### 4. `FLEETBASE_KEY`
+Your Fleetbase secret API key.
+- Found in: Developers → API Keys
+- Example: `$2y$10$tBRZALDA294JWgmMBlh6Y...`
+
+#### 5. `GOOGLE_MAPS_API_KEY`
+Google Maps API key with Maps SDK for Android enabled.
+- Example: `AIzaSyDE1Tqnjnl5Dk4nj9Inv_La3tEOSSvZKJQ`
+
+#### 6. `STRIPE_KEY`
+Stripe publishable key for payment processing.
+- Example: `pk_test_51SmsBjHf6YGiqazf7Wiv1Dmjd1I2n58tn8h0hctwIxdv0OaB8s9a7GmBuq7kmpBQJHXNJFC4zgUgMobnMfxXCvgP00YeKqcZTC`
+
 ### Optional Secrets
 
-These secrets are optional but recommended for production builds:
-
-- `FLEETBASE_HOST` - Your Fleetbase API host URL
-- `FLEETBASE_KEY` - Fleetbase API key
-- `STOREFRONT_KEY` - Storefront API key
-- `GOOGLE_MAPS_KEY` - Google Maps API key
-- `STRIPE_KEY` - Stripe API key
-- `FACEBOOK_APP_ID` - Facebook App ID
-- `FACEBOOK_CLIENT_TOKEN` - Facebook Client Token
+- `FACEBOOK_APP_ID` - Facebook App ID (defaults to '0')
+- `FACEBOOK_CLIENT_TOKEN` - Facebook Client Token (defaults to '0')
 - `GOOGLE_CLIENT_ID` - Google OAuth Client ID
 - `GOOGLE_IOS_CLIENT_ID` - Google iOS Client ID
+
+## How to Add All Secrets
+
+1. Go to: [https://github.com/sarvarbeksoporboyev-cmd/shirin-biscuit/settings/secrets/actions](https://github.com/sarvarbeksoporboyev-cmd/shirin-biscuit/settings/secrets/actions)
+2. Click **New repository secret** for each secret
+3. Enter the name exactly as shown above
+4. Paste the corresponding value
+5. Click **Add secret**
+
+**Important:** Without these secrets, the app will show "Invalid Storefront key" error.
 
 ## Running the Workflow
 
